@@ -1,4 +1,4 @@
-const Movies = [
+const movies = [
   {
     Title: 'X-Men: Days of Future Past',
     Year: '2014',
@@ -280,3 +280,63 @@ const Movies = [
       'https://m.media-amazon.com/images/M/MV5BOTdkYjA4YzAtMjNiZS00OTgyLTg5Y2ItNGIwZGQyMTUzNzFiXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg',
   },
 ];
+
+// Make const from UL
+const movieList = document.querySelector('#movie-list');
+console.log(movieList);
+// Make const Array of movie Titles
+const titles = movies.map(m => m.Title);
+// console.log(titles);
+
+// Make const Array of movie Posters
+const posters = movies.map(m => m.Poster);
+// console.log(posters);
+
+// Add li's to UL with movie Title
+
+// const movieListTitles = titles.forEach(movie => {
+//   let title = document.createElement('li');
+//   title.innerHTML = movie;
+//   movieList.appendChild(title);
+// });
+
+// Function to filter and add li's to UL with movie Poster
+
+const movieListItems = filter =>
+  filter.forEach(movie => {
+    let title = document.createElement('li');
+    title.innerHTML = '<img src="' + movie.Poster + '" alt="">';
+    movieList.appendChild(title);
+  });
+
+//Make filters for the movies
+const newmovies = movies.filter(title => title.Year >= 2014);
+
+const avengers = movies.filter(movie => {
+  return movie.Title.includes('Avengers');
+});
+
+const xMen = movies.filter(movie => {
+  return movie.Title.includes('X-Men');
+});
+
+const princess = movies.filter(movie => {
+  return movie.Title.includes('Princess');
+});
+
+const batman = movies.filter(movie => {
+  return movie.Title.includes('Batman');
+});
+
+// Remove all movies from the DOM
+// movieList.innerHTML = '';
+
+movieListItems(batman);
+
+// const alle radiobuttons
+const radio = document.getElementsByName('filter');
+
+console.log(radio);
+// voeg een eventlistener toe die luistert of er iets aan veranderd aan de radiobuttons
+
+console.log(movieList);
