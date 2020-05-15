@@ -283,14 +283,12 @@ const movies = [
 
 // Make const from UL
 const movieList = document.querySelector('#movie-list');
-console.log(movieList);
+
 // Make const Array of movie Titles
 const titles = movies.map(m => m.Title);
-// console.log(titles);
 
 // Make const Array of movie Posters
 const posters = movies.map(m => m.Poster);
-// console.log(posters);
 
 // Add li's to UL with movie Title
 
@@ -300,16 +298,25 @@ const posters = movies.map(m => m.Poster);
 //   movieList.appendChild(title);
 // });
 
-// Function to filter and add li's to UL with movie Poster
+// Function to filter and add li's and A's  with movie Poster to UL DOM
 
 const movieListItems = filter =>
   filter.forEach(movie => {
     let title = document.createElement('li');
-    title.innerHTML = '<img src="' + movie.Poster + '" alt="">';
     movieList.appendChild(title);
+    let movieA = document.createElement('a');
+    movieA.href = 'http://www.imdb.com/title/' + movie.imdbID;
+    movieA.target = '_blank';
+    title.appendChild(movieA);
+    let image = document.createElement('img');
+    image.src = movie.Poster;
+    movieA.appendChild(image);
   });
 
-//Make filters for the movies
+// Load all Movies to DOM
+movieListItems(movies);
+
+//Make filters
 const newmovies = movies.filter(title => title.Year >= 2014);
 
 const avengers = movies.filter(movie => {
@@ -328,15 +335,34 @@ const batman = movies.filter(movie => {
   return movie.Title.includes('Batman');
 });
 
-// Remove all movies from the DOM
-// movieList.innerHTML = '';
-
-movieListItems(batman);
-
-// const alle radiobuttons
+// const all radiobuttons
 const radio = document.getElementsByName('filter');
 
-console.log(radio);
-// voeg een eventlistener toe die luistert of er iets aan veranderd aan de radiobuttons
+// voeg een eventlistener toe die luistert of er iets veranderd aan de radiobuttons en voert de filter functie uit:
 
-console.log(movieList);
+radio.forEach(button => {
+  button.addEventListener('change', event => {
+    switch (event.target.value) {
+      case 'Avengers':
+        movieList.innerHTML = '';
+        movieListItems(avengers);
+        break;
+      case 'X-Men':
+        movieList.innerHTML = '';
+        movieListItems(xMen);
+        break;
+      case 'Princess':
+        movieList.innerHTML = '';
+        movieListItems(princess);
+        break;
+      case 'Batman':
+        movieList.innerHTML = '';
+        movieListItems(batman);
+        break;
+      case 'newMovies':
+        movieList.innerHTML = '';
+        movieListItems(newmovies);
+        break;
+    }
+  });
+});
