@@ -290,14 +290,6 @@ const titles = movies.map(m => m.Title);
 // Make const Array of movie Posters
 const posters = movies.map(m => m.Poster);
 
-// Add li's to UL with movie Title
-
-// const movieListTitles = titles.forEach(movie => {
-//   let title = document.createElement('li');
-//   title.innerHTML = movie;
-//   movieList.appendChild(title);
-// });
-
 // Function to filter and add li's and A's  with movie Poster to UL DOM
 
 const movieListItems = filter =>
@@ -335,7 +327,7 @@ const batman = movies.filter(movie => {
   return movie.Title.includes('Batman');
 });
 
-// const all radiobuttons
+// select all radiobuttons by Name
 const radio = document.getElementsByName('filter');
 
 // voeg een eventlistener toe die luistert of er iets veranderd aan de radiobuttons en voert de filter functie uit:
