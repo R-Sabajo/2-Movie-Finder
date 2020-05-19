@@ -1,12 +1,6 @@
 // Make const from UL
 const movieList = document.querySelector('#movie-list');
 
-// Make const Array of movie Titles
-const titles = movies.map(m => m.Title);
-
-// Make const Array of movie Posters
-const posters = movies.map(m => m.Poster);
-
 // Function to filter and add li's and A's  with movie Poster to UL DOM
 const movieListItems = filter =>
   filter.forEach(movie => {
@@ -36,7 +30,7 @@ const movieFilter = mfilter =>
 // select all radiobuttons by Name
 const radio = document.getElementsByName('filter');
 
-// voeg een eventlistener toe die luistert of er iets veranderd aan de radiobuttons en voert de filter functie uit:
+// add eventlistener to radiobuttons en run movie filter function
 radio.forEach(button => {
   button.addEventListener('change', event => {
     switch (event.target.value) {
@@ -52,9 +46,8 @@ radio.forEach(button => {
   });
 });
 
+// searchfield function with eventlistener
 const searchFilter = document.getElementById('search');
-console.log(searchFilter);
-
 searchFilter.addEventListener('keydown', event => {
   if (event.keyCode === 13) {
     movieList.innerHTML = '';
