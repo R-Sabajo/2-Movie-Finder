@@ -9,7 +9,7 @@
     />
     <title>W2 Eindopdracht: Filmzoeker</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer src="./script-db.js"></script>
+    <script defer src="./movie-db.js"></script>
     <script defer src="./script.js"></script>
   </head>
   <body>
@@ -18,20 +18,22 @@
     </header>
 
     <nav id="filter-list">
-      <input type="radio" name="filter" id="new-Movies" value="newMovies" />
+      <input type="radio" name="filter" id="new-Movies" value="newmovies" />
       <label for="new-Movies">New Movies</label>
 
-      <input type="radio" name="filter" id="Avengers" value="Avengers" />
+      <input type="radio" name="filter" id="Avengers" value="avengers" />
       <label for="Avengers">Avengers</label>
 
-      <input type="radio" name="filter" id="X-Men" value="X-Men" />
+      <input type="radio" name="filter" id="X-Men" value="x-men" />
       <label for="X-Men">X-Men</label>
 
-      <input type="radio" name="filter" id="Princess" value="Princess" />
+      <input type="radio" name="filter" id="Princess" value="princess" />
       <label for="Princess">Princess</label>
 
-      <input type="radio" name="filter" id="Batman" value="Batman" />
+      <input type="radio" name="filter" id="Batman" value="batman" />
       <label for="Batman">Batman</label>
+
+      <input type="text" id="search" placeholder="search" />
     </nav>
 
     <main>
