@@ -1,7 +1,7 @@
-// Make const from UL
+// Make var from UL
 const movieList = document.querySelector('#movie-list');
 
-// Function to filter and add li's and A's  with movie Poster to UL DOM
+// Function to add li's and A's with movie Poster to UL DOM
 const movieListItems = filter =>
   filter.forEach(movie => {
     let title = document.createElement('li');
