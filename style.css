@@ -11,16 +11,22 @@ header h1 {
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   height: 220px;
   margin-bottom: 5px;
 }
 
 header img {
-  height: 130px;
   border: 1px solid white;
   border-radius: 30px;
+  box-shadow: 0px 0px 20px whitesmoke;
+}
+
+.imdb img {
+  width: 150px;
+  border: 1px solid white;
+  border-radius: 15px;
   box-shadow: 0px 0px 20px whitesmoke;
 }
 
@@ -69,6 +75,9 @@ input {
 textarea:focus,
 input:focus {
   outline: none;
+  box-shadow: 0px 0px 10px white;
+  border: 1px solid white;
+  transition: all ease-in-out 200ms;
 }
 
 nav {
@@ -103,16 +112,23 @@ input:checked + label {
 @media only screen and (max-width: 600px) {
   header {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 180px;
     margin-bottom: 0px;
   }
 
   header img {
-    height: 100px;
+    width: 260px;
     border: 1px solid white;
     border-radius: 30px;
+    box-shadow: 0px 0px 20px whitesmoke;
+  }
+
+  .imdb img {
+    width: 100px;
+    border: 1px solid white;
+    border-radius: 15px;
     box-shadow: 0px 0px 20px whitesmoke;
   }
 
