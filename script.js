@@ -52,5 +52,6 @@ searchFilter.addEventListener('keydown', event => {
   if (event.keyCode === 13) {
     movieList.innerHTML = '';
     movieListItems(movieFilter(event.target.value));
+    radio.forEach(button => (button.checked = false));
   }
 });
